@@ -1,0 +1,33 @@
+
+Integer (Kind=Smll)  :: IO_File ;                ! Used for IOSTAT - Input Output Status - in the OPEN cammand.
+
+! - ????? FILE --------------------------------------------------------------------------------------------------------------------------------------
+
+UnFile = UN_??? ;
+Open ( Unit = UnFile, FILE = TRIM(Name)//'.????', ERR =  1001, IOSTAT = IO_File, &
+ACCESS = 'SEQUENTIAL' -- 'DIRECT' -- 'STREAM' -- 'APPEnd',
+ACTION = 'READ' -- 'Write' -- 'READWrite',
+  ASYNCHRONOUS = 'NO' -- 'YES',
+BLANK = 'NULL'  -- 'ZERO',
+BLOCKSIZE = 0,
+DEFAULTFILE = TRIM(?????_ADR), 
+DISPOSE = 'KEEP' -- 'DELETE' -- 'SUBMIT' -- 'SUBMIT/DELETE',
+  FORM = 'FORMATTED' -- 'UNFORMATTED' -- 	'BINARY',
+  POSITION = 'ASIS' -- 'REWIND' -- 'APPEnd',
+STATUS = 'OLD' -- 'NEW' -- 'SCRATCH' -- 'REPLACE' -- 'UNKNOWN'
+) ;
+
+recl =  ! this is the length of each data for the direct access.
+
+! =============================================== OPEN ERRORS =======================================================================================
+1001  IF ( IO_File > 0 ) Then ;
+        Write(*, Fmt_ERR1_OPEN) UnFile, IO_File  ;  Write(UnInf, Fmt_ERR1_OPEN) UnFile, IO_File  ; 
+        Write(*, Fmt_FL) ; Write(UnInf, Fmt_FL) ;
+        !#Call BEEP_FAIL ;
+        Write(*, Fmt_End) ; Read(*,*) ;  STOP ;
+      Else If ( IO_File < 0 ) Then ;
+        Write(*, Fmt_ERR1_OPEN) UnFile, IO_File  ; 
+        Write(UnInf, Fmt_ERR1_OPEN) UnFile, IO_File  ;  Write(*, Fmt_FL) ; Write(UnInf, Fmt_FL) ;
+        !#Call BEEP_FAIL ;
+        Write(*, Fmt_End) ; Read(*,*) ;  STOP ;
+      End If ;

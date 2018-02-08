@@ -1,0 +1,15 @@
+
+
+! - Close ????? File --------------------------------------------------------------------------------------------------------------------------------
+UnFile =  UN_??? ;
+Close ( Unit = UnFile, Status = 'KEEP'/'DELETE', ERR =  1002, IOSTAT = IO_File ) ;
+
+
+
+! =============================================== Close ERRORS ======================================================================================
+1002  If ( IO_File > 0 ) Then ;
+        Write(*, Fmt_ERR1_Close) UnFile, IO_File  ;  Write(UnInf, Fmt_ERR1_Close) UnFile, IO_File  ; 
+        Write(*, Fmt_FL) ; Write(UnInf, Fmt_FL) ;
+        !Call Beep_Fail ;
+        Write(*, Fmt_End) ; Read(*,*) ; ; Stop ;
+      End If ;
