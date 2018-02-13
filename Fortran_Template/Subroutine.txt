@@ -88,7 +88,7 @@ Implicit None
 
 
 
-!#Write(*    ,*) 'End Subroutine < sub >' 
-!#Write(UnInf,*) 'End Subroutine < sub >' 
+Write(*       ,*) 'End Subroutine < sub >' 
+Write(FileInfo,*) 'End Subroutine < sub >' 
 Return 
 End Subroutine sub 
