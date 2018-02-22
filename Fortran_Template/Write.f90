@@ -1,20 +1,20 @@
 
 "Sequential - Formatted"
 
-Integer (Kind=Smll)  :: IO_Write ;               ! Used for IOSTAT - Input Output Status - in the Write cammand.
+integer(Kind=Smll)  :: IO_write ;               ! Used for IOSTAT - Input Output Status - in the write cammand.
 
 UnFile = UN_OTPT ;
-Write (Unit = UnFile, FMT = format ,
-ADVANCE = 'YES', 
-ASYNCHRONOUS = 'NO',
-ID =  ,
-POS = ,
-IOSTAT = IO_Write,
-ERR = 1006,
+write(unit=UnFile, fmt="()",
+advance='yes', 
+asynchronous='no',
+id= ,
+pos=,
+iostat=IO_write,
+err=1006
 )
 
 
 ! Errors ==========================================================================================
-1006 Write(*, Fmt_Write1) UnFile, IO_Write; Write(UnFile, Fmt_Write1) UnFile, IO_Write;
-     Write(*, Fmt_FL); Write(UnInf, Fmt_FL); Write(*, Fmt_End); Read(*,*);  STOP;
+1006 write(*, Fmt_write1) UnFile, IO_write; write(UnFile, Fmt_write1) UnFile, IO_write;
+     write(*, Fmt_FL); write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
 

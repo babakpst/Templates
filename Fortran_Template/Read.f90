@@ -1,32 +1,29 @@
 
 Sequential - Formatted :
 
-
-
-Integer (Kind=Smll)  :: IO_Read ;                ! Holds error of read statements
+integer(Kind=Smll) :: IO_read  ! Holds error of read statements
 
 UnFile = UnInpt
-READ (Unit = UnFile, FMT = format ,
-ADVANCE = 'YES', 
-ASYNCHRONOUS = 'NO',
-ID =  ,
-POS = ,
-IOSTAT = IO_Read,
-ERR = 1003,
-End = 1004,
-EOR = 1005
-)
+read(unit=UnFile, fmt="()",
+advance='yes', 
+asynchronous='no',
+id=  ,
+pos= ,
+iostat=IO_read,
+err=1003,
+end=1004,
+eor=1005)
 
 ! Errors ==========================================================================================
 ! - Error in read statement -----------------------------------------------------------------------
-1003 Write(*, Fmt_READ1) UnFile, IO_Read; Write(UnFile, Fmt_READ1) UnFile, IO_Read;
-     Write(*, Fmt_FL);  Write(UnInf, Fmt_FL); Write(*, Fmt_End); Read(*,*);  STOP;
+1003 write(*, Fmt_read1) UnFile, IO_read; write(UnFile, Fmt_read1) UnFile, IO_read;
+     write(*, Fmt_FL);  write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
 
 ! - End-OF-FILE in read statement -----------------------------------------------------------------
-1004 Write(*, Fmt_READ2) UnFile, IO_READ; Write(UnFile, Fmt_READ2) UnFile, IO_Read;
-     Write(*, Fmt_FL);  Write(UnInf, Fmt_FL); Write(*, Fmt_End); Read(*,*);  STOP;
+1004 write(*, Fmt_read2) UnFile, IO_read; write(UnFile, Fmt_read2) UnFile, IO_read;
+     write(*, Fmt_FL);  write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
 
-! - End-OF-FILE IN READ STATEMENT -----------------------------------------------------------------
-1005 Write(*, Fmt_READ3) UnFile, IO_READ; Write(UnFile, Fmt_READ3) UnFile, IO_Read;
-     Write(*, Fmt_FL);  Write(UnInf, Fmt_FL); Write(*, Fmt_End); Read(*,*);  STOP;
+! - End-OF-FILE in read statement -----------------------------------------------------------------
+1005 write(*, Fmt_read3) UnFile, IO_read; write(UnFile, Fmt_read3) UnFile, IO_read;
+     write(*, Fmt_FL);  write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
         

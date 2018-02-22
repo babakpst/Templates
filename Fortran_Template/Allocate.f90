@@ -1,16 +1,16 @@
 
 ! Allocating
-Allocate ( ,  ,  ,     STAT = ERR_Alloc) 
+allocate( ,  ,  ,     STAT=ERR_Alloc) 
 
-  If ( ERR_Alloc /= 0 ) Then 
-    Write (*, Fmt_ALLCT) ERR_Alloc;  Write (UnInf, Fmt_ALLCT) ERR_Alloc;
-    Write(*, Fmt_FL);  Write(UnInf, Fmt_FL); Read(*, Fmt_End);  Stop;
-  End If 
+  if (ERR_Alloc /= 0) then 
+    write (*, Fmt_ALLCT) ERR_Alloc;  write (UnInf, Fmt_ALLCT) ERR_Alloc;
+    write(*, Fmt_FL);  write(UnInf, Fmt_FL); read(*, Fmt_End);  stop;
+  end if 
 
 
 ! Deallocating 
-DEAllocate( ,      STAT = ERR_DeAlloc ) 
-  IF ( ERR_DeAlloc /= 0 ) Then 
-    Write (*, Fmt_DEALLCT) ERR_DeAlloc;  Write (UnInf, Fmt_DEALLCT) ERR_DeAlloc;
-    Write(*, Fmt_FL);  Write(UnInf, Fmt_FL); Write(*, Fmt_End); Read(*,*);  STOP;
-  End If 
+deallocate( ,      STAT=ERR_DeAlloc) 
+  if (ERR_DeAlloc /= 0) then 
+    write (*, Fmt_DEALLCT) ERR_DeAlloc;  write (UnInf, Fmt_DEALLCT) ERR_DeAlloc;
+    write(*, Fmt_FL);  write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
+  end if 
