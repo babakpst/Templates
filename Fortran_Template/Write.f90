@@ -1,9 +1,9 @@
 
 "Sequential - Formatted"
 
-integer(Kind=Smll)  :: IO_write ;               ! Used for IOSTAT - Input Output Status - in the write cammand.
+integer(Kind=Smll)  :: IO_write ! Used for IOSTAT - Input Output Status - in the write cammand.
 
-UnFile = UN_OTPT ;
+UnFile = UN_OTPT
 write(unit=UnFile, fmt="()",
 advance='yes', 
 asynchronous='no',
