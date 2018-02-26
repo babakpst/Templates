@@ -1,6 +1,6 @@
 
 !##################################################################################################
-! Purpose: This module writes down information about the simulation in the info.txt file.
+! Purpose: This module ...
 !
 ! Developed by: Babak Poursartip
 ! Supervised by: Clint Dawson

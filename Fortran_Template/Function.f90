@@ -18,73 +18,75 @@
 !
 ! ================================ L O C A L   V A R I A B L E S ==================================
 ! (Refer to the main code to see the list of imported variables)
-!  . . . . . . . . . . . . . . . . Variables . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+!  . . . . . . . . . . . . . . . . variables . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 !
 !##################################################################################################
 
-Function fun    (                                                                                                             &
-!                                                                     & ! Integer Variables
-!                                                                     & ! Real Variables
-!                                                                     & ! Integer Arrays
+function fun    (                                                                                                             &
+!                                                                     & ! integer variables
+!                                                                     & ! Real variables
+!                                                                     & ! integer Arrays
 !                                                                     & ! Real Arrays
 !                                                                     & ! Characters
 !                                                                     & ! Type 
 )
 
-Implicit None ;
+result()
 
-! Global Variables ================================================================================
+implicit none
 
-! - integer Variables -----------------------------------------------------------------------------
-!#integer(Kind=Shrt), intent(In)    ::  
-!#integer(Kind=Shrt), intent(InOut) ::  
-!#integer(Kind=Shrt), intent(OUT)   ::  
-! - real Variables --------------------------------------------------------------------------------
-!#real(Kind=Dbl),     intent(In)    :: 
-!#real(Kind=Dbl),     intent(InOut) :: 
-!#real(Kind=Dbl),     intent(OUT)   :: 
-! - complex Variables -----------------------------------------------------------------------------
-!#complex, intent(In)    :: 
-!#complex, intent(InOut) :: 
-!#complex, intent(OUT)   :: 
+! Global variables ================================================================================
+
+! - integer variables -----------------------------------------------------------------------------
+!#integer(kind=Shrt), intent(in)    ::  
+!#integer(kind=Shrt), intent(inout) ::  
+!#integer(kind=Shrt), intent(out)   ::  
+! - real variables --------------------------------------------------------------------------------
+!#real(kind=Dbl),     intent(in)    :: 
+!#real(kind=Dbl),     intent(inout) :: 
+!#real(kind=Dbl),     intent(out)   :: 
+! - complex variables -----------------------------------------------------------------------------
+!#complex, intent(in)    :: 
+!#complex, intent(inout) :: 
+!#complex, intent(out)   :: 
 ! - integer Arrays --------------------------------------------------------------------------------
-!#integer(Kind=Shrt), intent(In),    Dimension (:  )  :: 
-!#integer(Kind=Shrt), intent(In),    Dimension (:,:)  :: 
-!#integer(Kind=Shrt), intent(In)    ::  
-!#integer(Kind=Shrt), intent(InOut) ::  
-!#integer(Kind=Shrt), intent(OUT)   :: 
+!#integer(kind=Shrt), intent(in),    dimension (:  )  :: 
+!#integer(kind=Shrt), intent(in),    dimension (:,:)  :: 
+!#integer(kind=Shrt), intent(in)    ::  
+!#integer(kind=Shrt), intent(inout) ::  
+!#integer(kind=Shrt), intent(out)   :: 
 ! - real Arrays -----------------------------------------------------------------------------------
-!#real(Kind=Dbl),     intent(In),    Dimension (:  )  :: 
-!#real(Kind=Dbl),     intent(InOut), Dimension (:  )  :: 
-!#real(Kind=Dbl),     intent(OUT),   Dimension (:  )  :: 
-! - character Variables ---------------------------------------------------------------------------
-!#character (Kind = ?, Len = ? ) :: 
-! - Logical Variables -----------------------------------------------------------------------------
-!#Logical   ::  
-! - Types -----------------------------------------------------------------------------------------
-!#Type() :: 
+!#real(kind=Dbl),     intent(in),    dimension (:  )  :: 
+!#real(kind=Dbl),     intent(inout), dimension (:  )  :: 
+!#real(kind=Dbl),     intent(out),   dimension (:  )  :: 
+! - character variables ---------------------------------------------------------------------------
+!#character (kind = ?, Len = ? ) :: 
+! - logical variables -----------------------------------------------------------------------------
+!#logical   ::  
+! - types -----------------------------------------------------------------------------------------
+!#type() :: 
 
 
-! Local Variables =================================================================================
-! - integer Variables -----------------------------------------------------------------------------
-!#integer(Kind=Shrt)  :: 
-! - real Variables --------------------------------------------------------------------------------
-!#real(Kind=Dbl)      :: 
-! - complex Variables -----------------------------------------------------------------------------
+! Local variables =================================================================================
+! - integer variables -----------------------------------------------------------------------------
+!#integer(kind=Shrt)  :: 
+! - real variables --------------------------------------------------------------------------------
+!#real(kind=Dbl)      :: 
+! - complex variables -----------------------------------------------------------------------------
 !#complex              :: 
 ! - integer Arrays --------------------------------------------------------------------------------
-!#integer(Kind=Shrt), Dimension (:)  :: 
-!#integer(Kind=Shrt), Allocatable, Dimension (:)  :: 
+!#integer(kind=Shrt), dimension (:)  :: 
+!#integer(kind=Shrt), Allocatable, dimension (:)  :: 
 ! - real Arrays -----------------------------------------------------------------------------------
-!#real(Kind=Dbl), Dimension (:)      ::  
-!#real(Kind=Dbl), Allocatable, Dimension (:)  :: 
-! - character Variables ---------------------------------------------------------------------------
-!#character (Kind = ?, Len = ? ) :: 
-! - Logical Variables -----------------------------------------------------------------------------
-!#Logical   ::  
-! - Type ------------------------------------------------------------------------------------------
+!#real(kind=Dbl), dimension (:)      ::  
+!#real(kind=Dbl), Allocatable, dimension (:)  :: 
+! - character variables ---------------------------------------------------------------------------
+!#character (kind = ?, Len = ? ) :: 
+! - logical variables -----------------------------------------------------------------------------
+!#logical   ::  
+! - type ------------------------------------------------------------------------------------------
 
 ! code ============================================================================================
 
 
-End Function fun
+end function fun
