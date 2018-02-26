@@ -29,23 +29,23 @@
 
 
 
-Module modu 
+module modu 
 
 ! Libraries =======================================================================================
 
 ! User defined modules ============================================================================
 
 
-Implicit None
+implicit none
 
-Public
-Private
+public
+private
 
-  Interface
-    Module Procedure 
-  End Interface
+  interface
+    module procedure 
+  end interface
 
 
-Contains
+contains
 
-End Module modu
+end module modu

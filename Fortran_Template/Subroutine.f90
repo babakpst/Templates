@@ -22,17 +22,17 @@
 !
 !##################################################################################################
 
-Subroutine sub(                                                       &
-!                                                                     & ! integer (1) Variables
-!                                                                     & ! integer (2) Variables
-!                                                                     & ! integer (4) Variables
-!                                                                     & ! integer (8) Variables
-!                                                                     & ! real Variables
-!                                                                     & ! integer Arrays
-!                                                                     & ! real Arrays
+subroutine sub(                                                       &
+!                                                                     & ! integer (1) variables
+!                                                                     & ! integer (2) variables
+!                                                                     & ! integer (4) variables
+!                                                                     & ! integer (8) variables
+!                                                                     & ! real variables
+!                                                                     & ! integer arrays
+!                                                                     & ! real arrays
 !                                                                     & ! characters
-!                                                                     & ! Type
-) 
+!                                                                     & ! type
+)
 
 
 ! Libraries =======================================================================================
@@ -40,65 +40,65 @@ Subroutine sub(                                                       &
 ! User defined modules ============================================================================
 
 
-Implicit None 
+implicit none
 
-! Global Variables ================================================================================
+! Global variables ================================================================================
 
-! - integer Variables -----------------------------------------------------------------------------
-!#integer (Kind=Shrt), Intent(In)    ::  
-!#integer (Kind=Shrt), Intent(InOut) ::  
-!#integer (Kind=Shrt), Intent(OUT)   ::  
-! - real Variables --------------------------------------------------------------------------------
-!#real (Kind=Dbl),     Intent(In)    :: 
-!#real (Kind=Dbl),     Intent(InOut) :: 
-!#real (Kind=Dbl),     Intent(OUT)   :: 
-! - complex Variables -----------------------------------------------------------------------------
-!#complex,             Intent(In)    :: 
-!#complex,             Intent(InOut) :: 
-!#complex,             Intent(OUT)   :: 
+! - integer variables -----------------------------------------------------------------------------
+!#integer (kind=Shrt), intent(in)    ::
+!#integer (kind=Shrt), intent(inout) ::
+!#integer (kind=Shrt), intent(out)   ::
+! - real variables --------------------------------------------------------------------------------
+!#real (kind=Dbl),     intent(in)    ::
+!#real (kind=Dbl),     intent(inout) ::
+!#real (kind=Dbl),     intent(out)   ::
+! - complex variables -----------------------------------------------------------------------------
+!#complex,             intent(in)    ::
+!#complex,             intent(inout) ::
+!#complex,             intent(out)   ::
 ! - integer Arrays --------------------------------------------------------------------------------
-!#integer (Kind=Shrt), Intent(In),    Dimension (:  )  :: 
-!#integer (Kind=Shrt), Intent(In),    Dimension (:,:)  :: 
-!#integer (Kind=Shrt), Intent(In)    ::  
-!#integer (Kind=Shrt), Intent(InOut) ::  
-!#integer (Kind=Shrt), Intent(OUT)   :: 
+!#integer (kind=Shrt), intent(in),    dimension (:  )  ::
+!#integer (kind=Shrt), intent(in),    dimension (:,:)  ::
+!#integer (kind=Shrt), intent(in)    ::
+!#integer (kind=Shrt), intent(inout) ::
+!#integer (kind=Shrt), intent(out)   ::
 ! - real Arrays -----------------------------------------------------------------------------------
-!#real (Kind=Dbl),     Intent(In),    Dimension (:  )  :: 
-!#real (Kind=Dbl),     Intent(InOut), Dimension (:  )  :: 
-!#real (Kind=Dbl),     Intent(OUT),   Dimension (:  )  :: 
-! - character Variables ---------------------------------------------------------------------------
-!#character (Kind = ?, Len = ? ) :: 
-! - Logical Variables -----------------------------------------------------------------------------
-!#Logical   ::  
-! - Types -----------------------------------------------------------------------------------------
-!#Type() :: 
+!#real (kind=Dbl),     intent(in),    dimension (:  )  ::
+!#real (kind=Dbl),     intent(inout), dimension (:  )  ::
+!#real (kind=Dbl),     intent(out),   dimension (:  )  ::
+! - character variables ---------------------------------------------------------------------------
+!#character (kind = ?, Len = ? ) ::
+! - logical variables -----------------------------------------------------------------------------
+!#logical   ::
+! - types -----------------------------------------------------------------------------------------
+!#type() ::
 
 
-! Local Variables =================================================================================
-! - integer Variables -----------------------------------------------------------------------------
-!#integer (Kind=Shrt)  :: 
-! - real Variables --------------------------------------------------------------------------------
-!#real (Kind=Dbl)      :: 
-! - complex Variables -----------------------------------------------------------------------------
-!#complex              :: 
+! Local variables =================================================================================
+! - integer variables -----------------------------------------------------------------------------
+!#integer (kind=Shrt)  ::
+! - real variables --------------------------------------------------------------------------------
+!#real (kind=Dbl)      ::
+! - complex variables -----------------------------------------------------------------------------
+!#complex              ::
 ! - integer Arrays --------------------------------------------------------------------------------
-!#integer (Kind=Shrt), Dimension (:)  :: 
-!#integer (Kind=Shrt), Allocatable, Dimension (:)  :: 
+!#integer (kind=Shrt), dimension (:)  ::
+!#integer (kind=Shrt), Allocatable, dimension (:)  ::
 ! - real Arrays -----------------------------------------------------------------------------------
-!#real (Kind=Dbl), Dimension (:)      ::  
-!#real (Kind=Dbl), Allocatable, Dimension (:)  :: 
-! - character Variables ---------------------------------------------------------------------------
-!#character (Kind = ?, Len = ? ) :: 
-! - Logical Variables -----------------------------------------------------------------------------
-!#Logical   ::  
-! - Type ------------------------------------------------------------------------------------------
+!#real (kind=Dbl), dimension (:)      ::
+!#real (kind=Dbl), allocatable, dimension (:)  ::
+! - character variables ---------------------------------------------------------------------------
+!#character (kind = ?, Len = ? ) ::
+! - logical variables -----------------------------------------------------------------------------
+!#logical   ::
+! - type ------------------------------------------------------------------------------------------
 
 ! code ============================================================================================
-write(*,       *) " Subroutine < sub >: " 
-write(FileInfo,*) " Subroutine < sub >: "
+write(*,       *) " subroutine < sub >: "
+write(FileInfo,*) " subroutine < sub >: "
 
 
-write(*,       *) 'End Subroutine < sub >' 
-write(FileInfo,*) 'End Subroutine < sub >' 
-return 
+write(*,       *) " end subroutine < sub >"
+write(FileInfo,*) " end subroutine < sub >"
+return
 end subroutine sub 
