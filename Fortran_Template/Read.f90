@@ -17,13 +17,13 @@ eor=1005)
 ! Errors ==========================================================================================
 ! - Error in read statement -----------------------------------------------------------------------
 1003 write(*, Fmt_read1) UnFile, IO_read; write(UnFile, Fmt_read1) UnFile, IO_read;
-     write(*, Fmt_FL);  write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
+     write(*, Fmt_FL);  write(FileInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
 
 ! - End-OF-FILE in read statement -----------------------------------------------------------------
 1004 write(*, Fmt_read2) UnFile, IO_read; write(UnFile, Fmt_read2) UnFile, IO_read;
-     write(*, Fmt_FL);  write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
+     write(*, Fmt_FL);  write(FileInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
 
 ! - End-OF-FILE in read statement -----------------------------------------------------------------
 1005 write(*, Fmt_read3) UnFile, IO_read; write(UnFile, Fmt_read3) UnFile, IO_read;
-     write(*, Fmt_FL);  write(UnInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
+     write(*, Fmt_FL);  write(FileInf, Fmt_FL); write(*, Fmt_End); read(*,*);  stop;
         
