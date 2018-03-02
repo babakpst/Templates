@@ -1,6 +1,6 @@
 
 !##################################################################################################
-! Purpose: This subroutine/function ....
+! Purpose: This subroutine ...
 !
 ! Developed by: Babak Poursartip
 ! Supervised by:

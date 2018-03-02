@@ -76,7 +76,7 @@ Integer (Kind=Smll), Parameter, Public  :: UnInptCnt=504; ! Input file for node 
 Integer (Kind=Smll), Parameter, Public  :: Un_CHK=599; ! Scratch file for debugging (.Chk)
 
 !Output files
-Integer (Kind=Smll), Parameter, Public  :: UnInf=600; ! Model information file (.Inf)
+Integer (Kind=Smll), Parameter, Public  :: FileInfo=600; ! Model information file (.Inf)
 
 
 ! Analysis case number ============================================================================

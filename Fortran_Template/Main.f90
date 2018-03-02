@@ -147,8 +147,8 @@ Call CPU_TIME( TimeInputS ) ;
 Allocate ( ,
            STAT=Err_Alloc) ;
   If ( Err_Alloc /= 0 ) Then ;
-    Write (*, Fmt_ALLCT) Err_Alloc ;  Write (UnInf, Fmt_ALLCT) Err_Alloc ;
-    Write(*, Fmt_FL) ;  Write(UnInf, Fmt_FL) ; Write(*, Fmt_End) ; Read(*,*) ;  Stop ;
+    Write (*, Fmt_ALLCT) Err_Alloc ;  Write (FileInfo, Fmt_ALLCT) Err_Alloc ;
+    Write(*, Fmt_FL) ;  Write(FileInfo, Fmt_FL) ; Write(*, Fmt_End) ; Read(*,*) ;  Stop ;
   End If ;
 
 ! Open required Files -----------------------------------------------------------------------------
@@ -204,20 +204,20 @@ Open (Unit=UnFile, File=Trim(AnaName)//'.txt', Err= 1001, IOStat=IO_File, Access
 Directory=MakeDirQQ (Trim(AdjustL (OutDir))//'/'//Trim(AdjustL (AnaName))  ) ;
   If (Directory) Then ;
      Write (*     ,*) 'New subdirectory successfully created' ;
-     Write (UnInf,*) 'New subdirectory successfully created' ;
+     Write (FileInfo,*) 'New subdirectory successfully created' ;
   Else ;
      Write (*    ,*) 'Subdirectory already exists' ;
-     Write (UnInf,*) 'Subdirectory already exists' ;
+     Write (FileInfo,*) 'Subdirectory already exists' ;
   End If ;
 
 ! Creating the internal File directory ------------------------------------------------------------
 Directory=MakeDirQQ (Trim(AdjustL (InlDir))//'/'//Trim(AdjustL (AnaName))  ) ;
   If (Directory) Then ;
      Write (*    ,*) 'New subdirectory successfully created  - Check folders' ;
-     Write (UnInf,*) 'New subdirectory successfully created  - Check folders' ;
+     Write (FileInfo,*) 'New subdirectory successfully created  - Check folders' ;
   Else ;
      Write (*    ,*) 'Subdirectory already exists' ;
-     Write (UnInf,*) 'Subdirectory already exists' ;
+     Write (FileInfo,*) 'Subdirectory already exists' ;
   End If ;
 
 OutDirAna=Trim(AdjustL (OutDir))//'/'//Trim(AdjustL (AnaName)) ;
@@ -240,9 +240,9 @@ InlDirAna=Trim(AdjustL (InlDir))//'/'//Trim(AdjustL (AnaName)) ;
     ! Error in analysis numbering
     CASE DEFAULT ;
       Write(*,*)" Type OF ANALYSIS IS NOT AVAILABLE IN THE MAIN SELECT CASE - CHECK THE Input File" ;
-      Write(UnInf,*)" Type OF ANALYSIS IS NOT AVAILABLE IN THE MAIN SELECT CASE - CHECK THE Input File" ;
+      Write(FileInfo,*)" Type OF ANALYSIS IS NOT AVAILABLE IN THE MAIN SELECT CASE - CHECK THE Input File" ;
       Write(*,*) ;
-      Write(UnInf,*) ;
+      Write(FileInfo,*) ;
       Write(*,*)' Simulation terminated due to some technical Error' ;
       Write(*,*)' Check the .inf File for further inFormation' ;
       !#Call BEEP_FAIL ;
@@ -279,12 +279,12 @@ UnFile= UN_ADR ;
 Close ( Unit=UnFile, Status='Keep', Err=1002, IOStat=IO_File ) ;
 
 ! Close inFormation File
-UnFile= UnInf ;
+UnFile= FileInfo ;
 Close ( Unit=UnFile, Status='Keep', Err=1002, IOStat=IO_File ) ;
 
 ! End the code ====================================================================================
 Write (*,"('Model Name: ',A30,'Analysis Name: ', A30)")ModelName, AnaName ;
-Write (*, Fmt_SUC) ;  Write(UnInf, Fmt_SUC) ;
+Write (*, Fmt_SUC) ;  Write(FileInfo, Fmt_SUC) ;
 Write (*, Fmt_End) ;
 
 !#Read(*,*);
@@ -292,13 +292,13 @@ Stop ;
 
 ! Opening statement Errors
 1001  If ( IO_File > 0 ) Then ;
-        Write(*, Fmt_Err1_OPEN) UnFile, IO_File  ;  Write(UnInf, Fmt_Err1_OPEN) UnFile, IO_File  ;
-        Write(*, Fmt_FL) ; Write(UnInf, Fmt_FL) ;
+        Write(*, Fmt_Err1_OPEN) UnFile, IO_File  ;  Write(FileInfo, Fmt_Err1_OPEN) UnFile, IO_File  ;
+        Write(*, Fmt_FL) ; Write(FileInfo, Fmt_FL) ;
         !#Call BEEP_FAIL ;
         Write(*, Fmt_End) ; Read(*,*) ;  Stop ;
       Else If ( IO_File < 0 ) Then ;
         Write(*, Fmt_Err1_OPEN) UnFile, IO_File  ;
-        Write(UnInf, Fmt_Err1_OPEN) UnFile, IO_File  ;  Write(*, Fmt_FL) ; Write(UnInf, Fmt_FL) ;
+        Write(FileInfo, Fmt_Err1_OPEN) UnFile, IO_File  ;  Write(*, Fmt_FL) ; Write(FileInfo, Fmt_FL) ;
         !#Call BEEP_FAIL ;
         Write(*, Fmt_End) ; Read(*,*) ;  Stop ;
       End If ;
@@ -306,8 +306,8 @@ Stop ;
 
 ! Close statement Errors
 1002  If ( IO_File > 0 ) Then ;
-        Write(*, Fmt_Err1_Close) UnFile, IO_File  ;  Write(UnInf, Fmt_Err1_Close) UnFile, IO_File ;
-        Write(*, Fmt_FL) ; Write(UnInf, Fmt_FL) ;
+        Write(*, Fmt_Err1_Close) UnFile, IO_File  ;  Write(FileInfo, Fmt_Err1_Close) UnFile, IO_File ;
+        Write(*, Fmt_FL) ; Write(FileInfo, Fmt_FL) ;
         !Call BEEP_FAIL ;
         Write(*, Fmt_End) ; Read(*,*) ; ; Stop ;
       End If ;
