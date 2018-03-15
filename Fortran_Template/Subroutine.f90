@@ -9,12 +9,12 @@
 ! The University of Texas at Austin
 !
 ! ================================ V E R S I O N ==================================================
-! V0.00: 00/00/2018 - File initiated.
+! V0.00: 00/00/2018 - Subroutine initiated.
 ! V0.01: 00/00/2018 - Initiated: Compiled without error for the first time.
 !
 ! File version $Id $
 !
-! Last update:
+! Last update: 00/00/2018
 !
 ! ================================ L O C A L   V A R I A B L E S ==================================
 ! (Refer to the main code to see the list of imported variables)
